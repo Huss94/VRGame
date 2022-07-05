@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 1873415453
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c56f9b0235c2a46278655bc3b89b4ecb
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 82515b3694a1e5beae009c48c1198c34
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Oculus/VR/Materials/BasicHandMaterial.mat
+- Assets/Oculus/SampleFramework/Usage/OVROverlay/Materials/Tile_Mat_Farlands.mat
+Dependencies:
+- C:/Users/tendl/Desktop/Unity training/Projet/Occulus/OVRAssetBundles/OVRMasterBundle/asset_png0

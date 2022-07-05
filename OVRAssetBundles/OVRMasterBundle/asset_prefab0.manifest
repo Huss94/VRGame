@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 1375262921
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4cd2dd9c35cd084d634946420d3be76a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 12ef1edcd44f401971294df3d19e9c4e
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: cb7623a8f0b49cf4dbaa40aea4d4be64, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 54c16b381e28e8d479237771d234dbae, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 73eac66b128fc8749a21623225c34541, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5cc5c234723e3a54d8dd09b131117743, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2609c54f376cffc4da1ab9401cc1a36f, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Oculus/VR/Prefabs/OVRHandPrefab.prefab
+Dependencies:
+- C:/Users/tendl/Desktop/Unity training/Projet/Occulus/OVRAssetBundles/OVRMasterBundle/asset_mat0
