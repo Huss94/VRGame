@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 83
+  controlID: 116
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 454
     height: 939
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -120,14 +120,14 @@ MonoBehaviour:
     y: 556
     width: 1466
     height: 383
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 12}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 12}
   - {fileID: 17}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 84
+  controlID: 117
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 85
+  controlID: 118
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -317,22 +317,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Oculus/SampleFramework/Core/HandsInteraction/Scripts
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Oculus/SampleFramework/Core/HandsInteraction/Scripts
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\tendl\Desktop\Unity training\Projet\Occulus
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 794}
-    m_SelectedIDs: a0980000
-    m_LastClickedID: 39072
-    m_ExpandedIDs: 00000000806700009a670000d0670000f46700000e680000c2680000c66800006471000066710000787200003c7600007c960000809600008296000088960000909600009e96000014970000e8df000000ca9a3b
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: ca8c0000
+    m_LastClickedID: 36042
+    m_ExpandedIDs: 00000000ca8c0000cc8c0000ce8c0000d08c0000d28c0000d48c0000d68c0000d88c0000da8c0000dc8c0000de8c0000e08c0000e28c0000e48c0000e68c0000ec8c0000fa8c0000fc8c0000548d00001405010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -360,7 +360,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000080670000
+    m_ExpandedIDs: 00000000ca8c0000cc8c0000ce8c0000d08c0000d28c0000d48c0000d68c0000d88c0000da8c0000dc8c0000de8c0000e08c0000e28c0000e48c0000e68c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -385,21 +385,21 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: ee9d0500
+    m_LastClickedInstanceID: 368110
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000e87a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: MyScene
-      m_OriginalName: MyScene
+      m_Name: PokeExamples
+      m_OriginalName: PokeExamples
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 57628
+      m_UserData: 66884
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -487,10 +487,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 62}
-      m_SelectedIDs: dc7bfeff
-      m_LastClickedID: -99364
-      m_ExpandedIDs: dc7bfeff3292feff4692feff5e92feff5c97feff6097feff5ca5feff74a5feffc8a6feffacb9feff14bbfeff1abbfeff82bbfeff0abefeff18befeff9ecdfeffa2cdfeff0acefeff92d0feffa0d0feff66d5feffaedcfeff4835ffff4e35ffff6a35ffff7235ffff5641ffff9a42ffffc64affffec4affff064bffff4c4bffff5a4bffff724bffffde4dfffffa4dffff044effff084effff7a51ffffce52ffffde79ffffee79ffffd28cffffdc8cffffe48cffff6a8dffffc097ffffc697ffff229dffff969fffffb29fffffbc9fffff9ca3ffffc0a5ffff06adffff0eb7ffffd6f1ffff3ef3ffff44f3ffff98f3ffffa4f3ffffe2f4ffff34f6ffff3ef6ffff34fbffff549a000026cf0000a2e10000d6e2000006e30000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 226b0700
+      m_LastClickedID: 486178
+      m_ExpandedIDs: fcc1faff00c2faff1cc2faff78c9faffded0faff2cd1faff7adbfaff14f0faff62f0faff6600fbff5c04fbffaa04fbffae14fbff4619fbff9419fbff9829fbff3c30fbff8a30fbff8e40fbff3844fbff8644fbff8c54fbff105bfbff5e5bfbff646bfbff1a6ffbff6c6ffbffb883fbff228ffbff748ffbffc0a3fbff14adfbff62adfbff68bdfbfffac6fbff48c7fbff4ed7fbffbadbfbff08dcfbff0eecfbff5ef1fbffacf1fbffb201fcffdc06fcff2a07fcff3017fcff1c18fcff2818fcff1c23fcff6a23fcff6c36fcff143afcff623afcff644dfcff9651fcffe451fcffe664fcffc869fcff166afcff187dfcffbc89fcff0a8afcff0c9dfcffe6affcff6ac5fcffb2cafcff02cbfcff04defcff14e2fcff64e2fcffa8f8fcff92fcfcffe0fcfcffe20ffdff9c21fdffa021fdff6626fdffda38fdff5e4efdffde63fdff5276fdffc889fdff1e8dfdff6c8dfdff6ea0fdff46a9fdff98a9fdffe0c0fdff92d4fdffe0d4fdffe2e7fdff9635feff1037feffee49feff3c4afeffa266feff586cfeffa66cfeff0a89feff3499feff8299feffe8b5feff04ccfeff52ccfeffb8e8feffd406ffff2207ffff8823fffffe29ffff562affffd44affffda64fffff664ffff0065ffff0465ffffca69ffff4a70ffffce85ffff468cffffcaa1ffff3ca8fffff6bbffff5cc5ffffb0c5ffff86d0ffff34fbffffce230100a23701001e3a01005a5d0100845e01002e71010054a50100feb70100c6de010000e8010002f2010046180200aa220200ac2c0200f650020020520200ca5a0200005b02005a5b0200625e0200925f0200cc620200ca6402005c6502009c660200229302000ce10200d8920300c49c030042bc0300f4e3030082e7030086f00300a60b0400340f0400381804005e32040058330400e6360400443e0400ea3f0400145a04000e5b0400fa6504009c870400648a0400448f0400089004004c910400889104008e91040028930400d4c4040098c50400dcc6040018c704001ec70400b8c8040018ed040084f80400c6f8040060fa04001cfb0400fa2b0500022e05003e2e0500442e0500de2f05009a300500a03005005e5b0500566705009867050032690500e6690500e8690500ee690500f4690500ee9d05001ea505005aa9050036ab0500ae270600f02706008a290600462a060098550600da55060074570600305806005e850600148606001a86060020860600bea3060030a5060068ac06006eb10600b0b106004ab306008ecf06004cd1060012d306009cd3060016d50600a4db06005cdf06009edf060038e10600f4e10600fae106003aff060052ff0600000107008a0107006a2b0700282d0700ee2e0700782f070088330700fa5707005e590700b0590700886a0700986a0700aa6a0700ca6a0700ce6a0700e86a0700706b0700
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -739,9 +739,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.09576555, y: 0.8144653, z: 0.32373253}
+    m_Target: {x: -0.031613033, y: 0.92503226, z: -0.054668665}
     speed: 2
-    m_Value: {x: -0.09576555, y: 0.8144653, z: 0.32373253}
+    m_Value: {x: -0.031613033, y: 0.92503226, z: -0.054668665}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -788,13 +788,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.287206, y: 0.0020087538, z: -0.00060218456, w: -0.9578658}
+    m_Target: {x: -0.33823818, y: -0.036127266, z: 0.012996039, w: -0.9402768}
     speed: 2
-    m_Value: {x: -0.28720498, y: 0.0034455524, z: -0.0010329935, w: -0.9578624}
+    m_Value: {x: -0.33823827, y: -0.036127273, z: 0.012996042, w: -0.94027704}
   m_Size:
-    m_Target: 0.38423458
+    m_Target: 0.41856304
     speed: 2
-    m_Value: 0.40233988
+    m_Value: 0.41856304
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -880,7 +880,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
