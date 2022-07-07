@@ -10,6 +10,7 @@ public class Teston : MonoBehaviour
     public GameObject VirtualCube;
     public GameObject RealCube;
     public GameObject offset;
+    public SyntheticHand myHand;
 
     // public OVRHand hand;
     public Hand hand;
@@ -17,6 +18,7 @@ public class Teston : MonoBehaviour
 
     // On va enregistrer le Warp orgigin au point ou la main est tracké pour la premiere fois  (ceci est un test)
     private bool first_time_tracked; 
+    private DataModifier<HandDataAsset> dm;
 
 
 
@@ -32,6 +34,7 @@ public class Teston : MonoBehaviour
     {
         T = VirtualCube.transform.position  - RealCube.transform.position;
         w = new Vector3(0,0,0);
+        
         
 
 
