@@ -358,6 +358,53 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d93b7e04b48cd7b4fa849695dba2ce9c, type: 3}
+--- !u!1 &335667848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 335667850}
+  - component: {fileID: 335667849}
+  m_Layer: 0
+  m_Name: Keyboard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &335667849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335667848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d1b3f40edab43499ae7888ab19e752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reff1: {fileID: 401887844}
+  reff2: {fileID: 538045438}
+  reff3: {fileID: 1162036541}
+--- !u!4 &335667850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335667848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.33343777, y: 0.8819621, z: -0.11846225}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &401887835
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,13 +560,25 @@ MonoBehaviour:
   _whenHover:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 401887840}
-        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
-        m_MethodName: set_material
-        m_Mode: 2
+      - m_Target: {fileID: 401887844}
+        m_TargetAssemblyTypeName: CubeProperties, Assembly-CSharp
+        m_MethodName: gameProcess
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 2a3d93e734eb05b41aca48b2816284cb, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CubeProperties, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -660,9 +719,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40005e8101c487a46838ee2c27ad1246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Couleur:
+  color:
     serializedVersion: 2
-    rgba: 10755328
+    rgba: 10413
+  gameref: {fileID: 1830271190}
+  idcube: 0
 --- !u!1 &402704394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,9 +1147,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40005e8101c487a46838ee2c27ad1246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Couleur:
+  color:
     serializedVersion: 2
-    rgba: 36355
+    rgba: 33301
+  gameref: {fileID: 1830271190}
+  idcube: 1
 --- !u!4 &569224487 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1678554349857304353, guid: 34a22dd67c1e5344591237fdd61e78ec, type: 3}
@@ -1544,9 +1607,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40005e8101c487a46838ee2c27ad1246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Couleur:
+  color:
     serializedVersion: 2
-    rgba: 144
+    rgba: 9777426
+  gameref: {fileID: 1830271190}
+  idcube: 2
 --- !u!1 &1620887220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,7 +1716,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830271188}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94ef0571d82d2334bbf9242d795ce3b4, type: 3}
   m_Name: 
@@ -1660,6 +1725,7 @@ MonoBehaviour:
   - {fileID: 401887835}
   - {fileID: 538045429}
   - {fileID: 1162036532}
+  passed: 0
 --- !u!137 &1894461120 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6536860776972643632, guid: 70d02a90551f23042a882cdceeaf8e3a, type: 3}

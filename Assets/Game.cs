@@ -6,36 +6,71 @@ public class Game : MonoBehaviour
 {
     public List<GameObject> Cubes;
     
+    
     private System.Random rnd = new System.Random();
+
     
     private bool showingPhase = true;// Si on est en showing phase, l'utilisateur ne joue pas, le jeu montre les couleurs de l'étape suivante 
     private bool creating = false;
     private bool playingPhase = false;
     private int level = 3;
     private Queue<int> order = new Queue<int>();
+    private int currentCube ;
+
+    // Variable qui gere si on passe a l'état suivant
+    public bool passed;
+
+
 
     void Start()
     {
-
+        
     }
 
     void Update()
     {
+        if (Input.GetKeyDown("i"))
+            print(currentCube);
+
+        // On montre l'ordre à retenir à l'utilisateur
         if (showingPhase){
             if (!creating)
                 StartCoroutine(CreateOrder(level));
 
         }
 
-        else if (playingPhase){ // Lorqu'on joue
-            foreach (var i in order){
-                print(i);
+        // L'utilisateur doit se rappeler de l'ordre et jouer 
+        else if (playingPhase){ 
+            if (order.Count > 0){
+                if (passed)
+                    currentCube = order.Dequeue();
+
             }
-            playingPhase = false;
+
+            else{
+                order.Clear();
+                playingPhase = false;
+                showingPhase = true;
+                level ++ ;
+            }
+
         }
     }
-    
 
+    public int getCurrentId(){
+        return Cubes[currentCube].GetComponent<CubeProperties>().idcube;
+    }
+
+    public void lost(){
+        print("Vous avez perdu");
+        level = 3;
+        playingPhase = false;
+        showingPhase = true;
+        creating = false;
+        order.Clear();
+    }
+
+    // Create order permet de créer une queue (pile fifo) contenant l'ordre des cubes a retenir
     IEnumerator CreateOrder(int n){
         creating = true;
         for (int i = 0; i  < n ; i++){
