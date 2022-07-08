@@ -18,20 +18,22 @@ public class Game : MonoBehaviour
     private int currentCube ;
 
     // Variable qui gere si on passe a l'état suivant
-    public bool passed;
+    private bool passed {get; set;}
 
 
 
     void Start()
     {
-        
+        passed = true;  
     }
 
     void Update()
     {
         if (Input.GetKeyDown("i"))
+        {
             print(currentCube);
-
+            print("Count : " + order.Count);
+        }
         // On montre l'ordre à retenir à l'utilisateur
         if (showingPhase){
             if (!creating)
@@ -43,7 +45,12 @@ public class Game : MonoBehaviour
         else if (playingPhase){ 
             if (order.Count > 0){
                 if (passed)
+                {
+                    Debug.Log("On Dequeue");
                     currentCube = order.Dequeue();
+
+                    passed = false;
+                }
 
             }
 
@@ -61,12 +68,18 @@ public class Game : MonoBehaviour
         return Cubes[currentCube].GetComponent<CubeProperties>().idcube;
     }
 
+    public void win(){
+        Cubes[currentCube].GetComponent<CubeProperties>().CubePlay();
+        passed = true;
+    }
+
     public void lost(){
         print("Vous avez perdu");
         level = 3;
         playingPhase = false;
         showingPhase = true;
         creating = false;
+        passed = true;
         order.Clear();
     }
 

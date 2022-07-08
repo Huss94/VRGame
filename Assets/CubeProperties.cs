@@ -24,8 +24,7 @@ public class CubeProperties : MonoBehaviour
         print("idcube = " + idcube);
         print("idcurr = " + gameref.getCurrentId());
         if (gameref.getCurrentId() == idcube){
-            CubePlay();
-            gameref.passed = true;
+            gameref.win();
         }
         else{
             gameref.lost();
