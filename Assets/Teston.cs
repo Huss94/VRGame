@@ -34,6 +34,7 @@ public class Teston : MonoBehaviour
     {
         T = VirtualCube.transform.position  - RealCube.transform.position;
         w = new Vector3(0,0,0);
+        AudioSource A = RealCube.GetComponent<AudioSource>();
         
         
 
