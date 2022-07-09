@@ -41,6 +41,9 @@ public class CubeProperties : MonoBehaviour
     }
 
     public IEnumerator lostanimation(){
+        // Lost sound
+        gameref.GetComponent<AudioSource>().Play(); 
+
         GetComponent<MeshRenderer>().material.color = Color.red;
         yield return new WaitForSeconds(0.2f);
         resetCube();

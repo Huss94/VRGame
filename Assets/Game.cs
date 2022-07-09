@@ -19,6 +19,7 @@ public class Game : MonoBehaviour
 
     // Variable qui gere si on passe a l'état suivant
     private bool passed {get; set;}
+    private float waiting = 0;
 
 
 
@@ -30,11 +31,19 @@ public class Game : MonoBehaviour
 
     void Update()
     {
+        StartCoroutine(gameStart());
+    }
+
+    IEnumerator gameStart(){
         if (Input.GetKeyDown("i"))
         {
             print(currentCube);
             print("Count : " + order.Count);
         }
+        if(waiting > 0)
+            yield return new WaitForSeconds(waiting);
+            waiting =  0;
+
         // On montre l'ordre à retenir à l'utilisateur
         if (showingPhase){
             if (!creating)
@@ -60,7 +69,8 @@ public class Game : MonoBehaviour
                 showingPhase = true;
                 level ++ ;
                 Debug.Log("NIVEAU " + level);
-                StartCoroutine(wait(3));
+                waiting = 2;
+
 
             }
 
@@ -86,12 +96,11 @@ public class Game : MonoBehaviour
         creating = false;
         passed = true;
         order.Clear();
+        waiting = 4;
 
 
 
-        // LOSE ANIMATION
 
-        StartCoroutine(wait(3));
     }
 
     public IEnumerator wait(float s){
@@ -105,9 +114,9 @@ public class Game : MonoBehaviour
             int randomNum = rnd.Next(3);
             order.Enqueue(randomNum);
             Cubes[randomNum].GetComponent<CubeProperties>().CubePlay();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             Cubes[randomNum].GetComponent<MeshRenderer>().material.color = Color.white;
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
 
         }
 
