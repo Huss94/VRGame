@@ -10,7 +10,7 @@ public class Game : MonoBehaviour
     private System.Random rnd = new System.Random();
 
     
-    private bool showingPhase = true;// Si on est en showing phase, l'utilisateur ne joue pas, le jeu montre les couleurs de l'étape suivante 
+    private bool showingPhase; // Si on est en showing phase, l'utilisateur ne joue pas, le jeu montre les couleurs de l'étape suivante 
     private bool creating = false;
     private bool playingPhase = false;
     private int level = 3;
@@ -25,6 +25,7 @@ public class Game : MonoBehaviour
     void Start()
     {
         passed = true;  
+        showingPhase = true;
     }
 
     void Update()
@@ -46,7 +47,6 @@ public class Game : MonoBehaviour
             if (order.Count > 0){
                 if (passed)
                 {
-                    Debug.Log("On Dequeue");
                     currentCube = order.Dequeue();
 
                     passed = false;
@@ -54,11 +54,14 @@ public class Game : MonoBehaviour
 
             }
 
-            else{
-                order.Clear();
+            else if (passed){
+                // order.Clear(); // Inutile vu que la queue est vide
                 playingPhase = false;
                 showingPhase = true;
                 level ++ ;
+                Debug.Log("NIVEAU " + level);
+                StartCoroutine(wait(3));
+
             }
 
         }
@@ -68,19 +71,31 @@ public class Game : MonoBehaviour
         return Cubes[currentCube].GetComponent<CubeProperties>().idcube;
     }
 
+    public bool get_showingPhase(){
+        return showingPhase;
+    }
+
     public void win(){
-        Cubes[currentCube].GetComponent<CubeProperties>().CubePlay();
         passed = true;
     }
 
     public void lost(){
-        print("Vous avez perdu");
         level = 3;
         playingPhase = false;
         showingPhase = true;
         creating = false;
         passed = true;
         order.Clear();
+
+
+
+        // LOSE ANIMATION
+
+        StartCoroutine(wait(3));
+    }
+
+    public IEnumerator wait(float s){
+        yield return new WaitForSeconds(s); 
     }
 
     // Create order permet de créer une queue (pile fifo) contenant l'ordre des cubes a retenir

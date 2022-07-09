@@ -20,17 +20,35 @@ public class CubeProperties : MonoBehaviour
     }
 
 
-    public void gameProcess(){
-        print("idcube = " + idcube);
-        print("idcurr = " + gameref.getCurrentId());
+    public void PlayerChoice(){
+        // Si on est dans la showing phase, on interdit le joueur de jouer;
+        if (gameref.get_showingPhase())
+            return; 
+
         if (gameref.getCurrentId() == idcube){
+            CubePlay();
             gameref.win();
         }
         else{
+            StartCoroutine(lostanimation());
             gameref.lost();
         }
 
     }
 
+    public void resetCube(){
+        GetComponent<MeshRenderer>().material.color = Color.white;
+    }
+
+    public IEnumerator lostanimation(){
+        GetComponent<MeshRenderer>().material.color = Color.red;
+        yield return new WaitForSeconds(0.2f);
+        resetCube();
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<MeshRenderer>().material.color = Color.red;
+        yield return new WaitForSeconds(0.2f);
+        resetCube();
+
+    }
 
 }

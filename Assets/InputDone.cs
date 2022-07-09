@@ -18,18 +18,27 @@ public class InputDone : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown("a")){
-            reff1.gameProcess();
-            Debug.Log("Carré 1");
+            reff1.PlayerChoice();
         }
 
         if (Input.GetKeyDown("z")){
-            reff2.gameProcess();
-            Debug.Log("Carré 2");
+            reff2.PlayerChoice();
         }
 
         if (Input.GetKeyDown("e")){
-            reff3.gameProcess();
-            Debug.Log("Carré 3");
+            reff3.PlayerChoice();
         }
+
+
+        if (Input.GetKeyUp("a")){
+            reff1.resetCube();
+        }
+        if (Input.GetKeyUp("z")){
+            reff2.resetCube();
+        }
+        if (Input.GetKeyUp("e")){
+            reff3.resetCube();
+        }
+
     }
 }
