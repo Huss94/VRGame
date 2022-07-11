@@ -80,6 +80,10 @@ public class Game : MonoBehaviour
     public int getCurrentId(){
         return Cubes[currentCube].GetComponent<CubeProperties>().idcube;
     }
+    
+    public Vector3 getCurrentCubePose(){
+        return Cubes[currentCube].GetComponent<Transform>().position;
+    }
 
     public bool get_showingPhase(){
         return showingPhase;
@@ -137,3 +141,5 @@ public class Game : MonoBehaviour
     }
     
 }
+
+

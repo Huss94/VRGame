@@ -48,7 +48,7 @@ public class Calibration : MonoBehaviour
 
 //        if (OVRInput.GetDown(OVRInput.Button.One))
 //        {
-//            Debug.Log("Entrée ici");
+//            Debug.Log("Entrï¿½e ici");
 //            if (leftController.isActiveAndEnabled)
 //            {
 
