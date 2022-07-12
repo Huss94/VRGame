@@ -25,10 +25,12 @@ public class Calibration : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown("c"))
+        if (OVRInput.GetDown(OVRInput.Button.One))
         {
-            if (!leftController.TryGetPose(out controllerPose))
-                Debug.Log("Return");
+            if (!leftController.TryGetPose(out controllerPose)){
+                return;
+            }
+
 
            
             pivotPoint.GetComponent<Transform>().position = controllerPose.position;

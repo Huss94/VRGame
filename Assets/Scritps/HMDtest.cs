@@ -29,7 +29,20 @@ public class HMDtest : MonoBehaviour
     void Update()
     {
         if (gameref.get_showingPhase()) return;
+        test();
+        // Azman();
 
+
+    }
+
+    void test(){
+        if (Input.anyKeyDown){
+            setNewHandPose(new Vector3(0,0.8f,2f));
+            Debug.Log("POSE MODIfiée");
+
+        }
+    }
+    void Azman(){
         if (!RedirectionOn)
             TurnRedirectionON();
         
@@ -46,6 +59,7 @@ public class HMDtest : MonoBehaviour
 
             setNewHandPose(pH + w);
         }
+
 
     }
 
