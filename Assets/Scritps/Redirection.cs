@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Oculus.Interaction.Input;
+using Oculus.Interaction;
 
-public class Redirection : MonoBehaviour
+public class HMDtest : MonoBehaviour
 {
-    public Hand hand;
+    public Hand h;
     public Game gameref;
     public GameObject virtualHand;
     public GameObject offset;
@@ -47,8 +48,8 @@ public class Redirection : MonoBehaviour
             Pose poseH;  
             Pose eyePose;
 
-            hand.GetRootPose(out poseH);
-            hand.GetCenterEyePose(out eyePose);
+            h.GetRootPose(out poseH);
+            h.GetCenterEyePose(out eyePose);
             Debug.Log("Distance " +Vector3.Distance(poseH.position, eyePose.position));
 
             if (Vector3.Distance(poseH.position, eyePose.position) < 0.3){
@@ -80,7 +81,7 @@ public class Redirection : MonoBehaviour
     }
 
     bool setNewHandPose(Vector3 position){ 
-        if (hand.isActiveAndEnabled){
+        if (h.isActiveAndEnabled){
             virtualHand.transform.position = position;
             return true;
         }
@@ -98,7 +99,7 @@ public class Redirection : MonoBehaviour
 
         Pose HandPose;
         // Pose eyePose;
-        hand.GetRootPose(out HandPose);
+        h.GetRootPose(out HandPose);
         // h.GetCenterEyePose(out eyePose);
 
         // if (HandPose.position.z > eyePose.position.z + 0.1){
