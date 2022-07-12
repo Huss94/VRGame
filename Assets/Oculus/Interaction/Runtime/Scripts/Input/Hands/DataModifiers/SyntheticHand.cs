@@ -85,6 +85,7 @@ namespace Oculus.Interaction.Input
             }
         }
 
+        
         protected override void Apply(HandDataAsset data)
         {
             if (!data.IsDataValid || !data.IsTracked || !data.IsHighConfidence)
