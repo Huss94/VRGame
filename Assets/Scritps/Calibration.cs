@@ -6,41 +6,32 @@ using Oculus.Interaction.Input;
 public class Calibration : MonoBehaviour
 {
     public Controller leftController; 
-    public GameObject Table;
     public GameObject pivotPoint;
-    public GameObject CameraRig;
 
     private Pose controllerPose;
-    private Transform TDesk;
-    private Pose pointerPose;
-    // Start is called before the first frame update
-    void Start()
-    {
-        TDesk = Table.GetComponent<Transform>();
-        
-    }
+    
 
-    // Update is called once per frame
     void Update()
     {
+        Calibrate();
+    }
 
-
+    void Calibrate(){
         if (OVRInput.GetDown(OVRInput.Button.One))
         {
             if (!leftController.TryGetPose(out controllerPose)){
                 return;
             }
-
-
-           
             pivotPoint.GetComponent<Transform>().position = controllerPose.position;
             pivotPoint.GetComponent<Transform>().rotation = Quaternion.Euler(0, controllerPose.rotation.eulerAngles.y, 0);
-            Debug.Log("Controller" + controllerPose.position);
-            Debug.Log("Pivot" + pivotPoint.transform.position);
+            // Debug.Log("Controller" + controllerPose.position);
+            // Debug.Log("Pivot" + pivotPoint.transform.position);
         }
+
 
     }
 
+}
 //    void OldCalib()
 //    {
 //        if (leftController.TryGetPose(out controllerPose))
@@ -89,4 +80,3 @@ public class Calibration : MonoBehaviour
 
     
 //}
-}
