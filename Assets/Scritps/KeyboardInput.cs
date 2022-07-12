@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputDone : MonoBehaviour
+public class KeyboardInput : MonoBehaviour
 {
     public CubeProperties reff1;
     public CubeProperties reff2;

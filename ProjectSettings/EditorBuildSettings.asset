@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PokeExamples.unity
+    path: Assets/Scenes/MeomryGame.unity
     guid: cfb4edf24379a20419d2cbb1b42ed2b3
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: e5256e191a6def0479ef7b2fc18182d0, type: 2}
