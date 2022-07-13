@@ -73,6 +73,9 @@ public class Redirection2 : MonoBehaviour
 
             gameref.NewCube();
             virtualCubePosition = gameref.GetCurrentCubePosition();
+
+            // Dans le cas d'un recalibrage, il est important de mettre a jour la valeur de realCubePosition
+            realCubePosition = gameref.Cubes[4].transform.position;
             T = virtualCubePosition - realCubePosition;
 
             warpOrigin.GetComponent<MeshRenderer>().material.color = Color.white;
