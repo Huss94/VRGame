@@ -10,6 +10,7 @@ public class Redirection2 : MonoBehaviour
     public VRGame gameref;
     public GameObject offset;
     public GameObject warpOrigin;
+    public GameObject realHand;
 
     
     // On enrigistre la pose réel pour garder la trace de la vrai main (et peut etre l'afficher pour un rendu visuel de la redirection);
@@ -55,6 +56,8 @@ public class Redirection2 : MonoBehaviour
             // On modifie aussi la position de ce gameObject (redirection2) pour l'utiliser comme origine pokeInteractor : 
             transform.position = pH + w; 
 
+            realHand.transform.position  = pH;
+
     }
 
 
@@ -78,6 +81,8 @@ public class Redirection2 : MonoBehaviour
 
             // On lance un timer a chaque fois qu'oon touche warp origin
             gameref.score.t  = Time.time;
+            Debug.Log("Virtual : " + virtualCubePosition);
+            Debug.Log("réel : " + realCubePosition);
 
 
 
