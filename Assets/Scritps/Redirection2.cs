@@ -11,6 +11,8 @@ public class Redirection2 : MonoBehaviour
     public GameObject offset;
     public GameObject warpOrigin;
     public GameObject realHand;
+    public GameObject planeOnHand;
+    public GameObject Sphere; 
 
     
     // On enrigistre la pose réel pour garder la trace de la vrai main (et peut etre l'afficher pour un rendu visuel de la redirection);
@@ -20,6 +22,9 @@ public class Redirection2 : MonoBehaviour
     private Vector3 virtualCubePosition;
     private Vector3 T; // Distance entre le cube reel et le cube virtuel 
     private Vector3 wO;
+    private Vector3 w; // offset
+    private Pose poseH;
+
 
     void Start()
     {
@@ -31,9 +36,10 @@ public class Redirection2 : MonoBehaviour
         T = virtualCubePosition - realCubePosition;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Azman();
+        followVirtualHand();
     }
 
 
@@ -42,23 +48,34 @@ public class Redirection2 : MonoBehaviour
         // Debug.Log(HandPose.position.z - eyePose.position.z );
 
 
-            Pose poseH;  
             hand.GetRootPose(out poseH);
 
             Vector3 pH = poseH.position;
             Vector3 wT = realCubePosition; // Cette position est immobile.
 
             float a = Mathf.Max(0, Mathf.Min(1, (Vector3.Dot((wT - wO), (pH - wO))) / Vector3.Dot(wT - wO, wT - wO)));
-            Vector3 w = a*T;
+            w = a*T;
 
 
             offset.transform.position = w;
             // On modifie aussi la position de ce gameObject (redirection2) pour l'utiliser comme origine pokeInteractor : 
-            transform.position = pH + w; 
 
             realHand.transform.position  = pH;
 
+
     }
+    private void followVirtualHand(){
+        Pose jointPose;
+        Pose middleFingerPose;
+        hand.GetJointPose(HandJointId.HandMiddle2, out jointPose);
+        hand.GetJointPose(HandJointId.HandMiddle1, out middleFingerPose);
+        planeOnHand.transform.position = jointPose.position + w + new Vector3(0,0.05f,0);
+        planeOnHand.transform.rotation = poseH.rotation;
+
+        realHand.transform.position = jointPose.position ;
+        transform.position = middleFingerPose.position + w; 
+    }
+
 
 
     // Lorsqu'on a touché le warpOrigin on  déclanche cette méthode qui permet de dire au jeu de choisir un nouveau cube.
@@ -84,9 +101,10 @@ public class Redirection2 : MonoBehaviour
 
             // On lance un timer a chaque fois qu'oon touche warp origin
             gameref.score.t  = Time.time;
-            Debug.Log("Virtual : " + virtualCubePosition);
-            Debug.Log("réel : " + realCubePosition);
 
+
+            Sphere.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            Sphere.transform.position = planeOnHand.transform.position + new Vector3(0,0.006f, 0);
 
 
         }
