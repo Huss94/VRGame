@@ -7,11 +7,14 @@ public class Score : MonoBehaviour
     public float t;
     private int totalScore;
     private int meilleurScore;
+    private int scoreMultiplier;
+
     // Start is called before the first frame update
     void Start()
     {
         totalScore = 0; 
         meilleurScore = 0;
+        scoreMultiplier = 10;
     }
 
     public int getMeilleurScore(){
@@ -25,16 +28,13 @@ public class Score : MonoBehaviour
         float diff = Time.time - t;
         Debug.Log(diff);
 
-        if (diff < 5)
-            totalScore += 3;
-        else if (diff < 7) 
-            totalScore +=2;
-        else if (diff < 10)
-            totalScore +=1;
-        else 
-            return;
+        if (diff < 6)
+            totalScore += 3*scoreMultiplier;
+        else if (diff < 8) 
+            totalScore +=2*scoreMultiplier;
+        else
+            totalScore +=1*scoreMultiplier;
 
-        Debug.Log("Score : " + totalScore);
     }
 
     public void resetScore(){
@@ -47,5 +47,14 @@ public class Score : MonoBehaviour
         } 
         Debug.Log("Meilleurscore = " + meilleurScore); 
         resetScore();
+    }
+
+    public void onCollision(){
+        if (scoreMultiplier > 1)
+            scoreMultiplier--;
+        
+    }
+    public int get_scoreMult(){
+        return scoreMultiplier;
     }
 }
