@@ -67,10 +67,12 @@ public class Redirection2 : MonoBehaviour
     private void followVirtualHand(){
         Pose jointPose;
         Pose middleFingerPose;
+        Pose HandPlane;
         hand.GetJointPose(HandJointId.HandMiddle2, out jointPose);
-        hand.GetJointPose(HandJointId.HandMiddle1, out middleFingerPose);
-        planeOnHand.transform.position = jointPose.position + w + new Vector3(0,0.05f,0);
-        planeOnHand.transform.rotation = poseH.rotation;
+        hand.GetJointPose(HandJointId.HandIndex1, out middleFingerPose);
+        hand.GetJointPose(HandJointId.HandStart, out HandPlane);
+        planeOnHand.transform.position = HandPlane.position + w + new Vector3(0,0.02f,0.0f);
+        planeOnHand.transform.rotation = HandPlane.rotation;
 
         realHand.transform.position = jointPose.position ;
         transform.position = middleFingerPose.position + w; 
@@ -108,6 +110,9 @@ public class Redirection2 : MonoBehaviour
 
 
         }
+    }
+    private void OnCollisionEnter(Collision other) {
+        print("Collision done");    
     }
 
 
