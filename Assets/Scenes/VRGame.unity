@@ -1934,9 +1934,9 @@ MonoBehaviour:
   offset: {fileID: 1250399942}
   warpOrigin: {fileID: 859673738}
   realHand: {fileID: 684819308}
-  planeOnHandOffset: {fileID: 0}
+  planeOnHandOffset: {fileID: 40341881}
   Sphere: {fileID: 295050914}
-  planeOnHand: {fileID: 40341881}
+  planeOnHand: {fileID: 1630527675}
 --- !u!1 &501027598
 GameObject:
   m_ObjectHideFlags: 0
