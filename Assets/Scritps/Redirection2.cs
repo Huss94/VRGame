@@ -11,8 +11,9 @@ public class Redirection2 : MonoBehaviour
     public GameObject offset;
     public GameObject warpOrigin;
     public GameObject realHand;
-    public GameObject planeOnHand;
+    public GameObject planeOnHandOffset;
     public GameObject Sphere; 
+    public GameObject planeOnHand;
 
     
     // On enrigistre la pose réel pour garder la trace de la vrai main (et peut etre l'afficher pour un rendu visuel de la redirection);
@@ -71,8 +72,8 @@ public class Redirection2 : MonoBehaviour
         hand.GetJointPose(HandJointId.HandMiddle2, out jointPose);
         hand.GetJointPose(HandJointId.HandIndex1, out middleFingerPose);
         hand.GetJointPose(HandJointId.HandStart, out HandPlane);
-        planeOnHand.transform.position = HandPlane.position + w + new Vector3(0,0.02f,0.0f);
-        planeOnHand.transform.rotation = HandPlane.rotation;
+        planeOnHandOffset.transform.position = HandPlane.position + w + new Vector3(0,0.02f,0.0f);
+        planeOnHandOffset.transform.rotation = HandPlane.rotation;
 
         realHand.transform.position = jointPose.position ;
 
@@ -108,7 +109,7 @@ public class Redirection2 : MonoBehaviour
 
 
             Sphere.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            Sphere.transform.position = planeOnHand.transform.position + new Vector3(0,0.006f, 0);
+            Sphere.transform.position = planeOnHand.transform.position + new Vector3(0,0.007f, 0);
 
 
         }
