@@ -29,7 +29,6 @@ public class Redirection2 : MonoBehaviour
     void Start()
     {
         realCubePosition = gameref.Cubes[4].transform.position;
-        wO = warpOrigin.transform.position;
 
         // Au départ on veut que le warping soit nul 
         virtualCubePosition = realCubePosition;
@@ -47,8 +46,11 @@ public class Redirection2 : MonoBehaviour
 
         // Debug.Log(HandPose.position.z - eyePose.position.z );
 
-
             hand.GetRootPose(out poseH);
+
+            // Il est important de mettre a jour le warp origin en cas de recalibration de la part de l'utilisateur
+            // C'est pourquoi on l'actualise a chaque frame.
+            wO = warpOrigin.transform.position;
 
             Vector3 pH = poseH.position;
             Vector3 wT = realCubePosition; // Cette position est immobile.
@@ -58,8 +60,6 @@ public class Redirection2 : MonoBehaviour
 
 
             offset.transform.position = w;
-            // On modifie aussi la position de ce gameObject (redirection2) pour l'utiliser comme origine pokeInteractor : 
-
             realHand.transform.position  = pH;
 
 
@@ -75,7 +75,9 @@ public class Redirection2 : MonoBehaviour
         planeOnHand.transform.rotation = HandPlane.rotation;
 
         realHand.transform.position = jointPose.position ;
-        transform.position = middleFingerPose.position + w; 
+
+        // On modifie aussi la position de ce gameObject (redirection2) pour l'utiliser comme origine pokeInteractor : 
+        this.transform.position = middleFingerPose.position + w; 
     }
 
 
